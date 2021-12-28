@@ -23,7 +23,6 @@ with open("day1input.txt", "r") as f:
 
 #set up variables
 previous = input_ints[0]
-current = 0
 numIncreases = 0
 
 #do math
@@ -35,3 +34,18 @@ for i in input_ints:
 
 #day 1 output
 print("day 1: " + str(numIncreases))
+
+#day 2 start
+#set up variables
+previous = input_ints[0] + input_ints[1] + input_ints[2]
+numIncreases = 0
+
+#do math
+for i in range(len(input_ints) - 3):
+    current = input_ints[i] + input_ints[i + 1] + input_ints[i + 2]
+    if current > previous:
+        numIncreases = numIncreases + 1
+    previous = current
+
+#day 2 output
+print("day 2: " + str(numIncreases))
